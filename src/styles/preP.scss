@@ -1,0 +1,24 @@
+#addTask {
+    background-color: #1dcd40; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background-color: #00951e; 
+    }
+  }
+  
+  #deleteList {
+    background-color: #E74C3C;
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background-color: #C0392B; 
+    }
+  }
+  
