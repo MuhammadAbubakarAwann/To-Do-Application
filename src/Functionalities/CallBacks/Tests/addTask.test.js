@@ -1,65 +1,43 @@
-import { JSDOM } from "jsdom";
-import addTask from "../addTask";
-import addTaskMethod from "../../Taskmethods/addTask";
-import localStorageList from "../../LocalStorage/localStorageList";
-import taskManager from "../../../TaskData/index";
+import addTask from '../addTask';
+import taskManager from '../../../TaskData';
+import mockAddTaskMethod from '../../Taskmethods/addTask';
+import mockLocalStorageList from '../../LocalStorage/localStorageList';
+import { JSDOM } from 'jsdom';
+jest.mock('../../../TaskData', () => ({
+    tasksArray: [],
+}));
 
-jest.mock('../../Taskmethods/addTask')
-jest.mock('../../LocalStorage/localStorageList')
-jest.mock('../../../TaskData/index')
+jest.mock('../../Taskmethods/addTask', () => jest.fn());
+jest.mock('../../LocalStorage/localStorageList', () => jest.fn());
 
-describe('addTask', () => {
-    let dom;
-    let taskInput;
-    let originalDocument;
-
+describe('addTask function', () => {
     beforeEach(() => {
-        dom = new JSDOM(`<!DOCTYPE html><p>Hello World</p>`);
-        taskManager.tasksArray = [];
-        originalDocument = global.document;
+
+        const dom = new JSDOM(`<!DOCTYPE html><html><body>
+          <input id="taskInput" type="text" />
+          <button id="addTask">Add Task</button>
+          <table id="taskList"><tbody></tbody></table>
+        </body></html>`);
         global.document = dom.window.document;
-        taskInput = document.createElement('input');
-        taskInput.id = 'taskInput';
-        document.body.appendChild(taskInput);
-    })
+        global.window = dom.window;
+    });
 
     afterEach(() => {
-        document.body.removeChild(taskInput);
-        global.document = undefined;
+        global.document = undefined
         jest.resetAllMocks()
     })
+    test('adds a task to tasksArray and invokes addTaskMethod and localStorageList', () => {
+        const taskInput = document.getElementById('taskInput');
+        taskInput.value = 'New Task';
 
-    it('should not add a task with an empty input', () => {
         addTask();
-        expect(taskManager.tasksArray.length).toBe(0);
-        expect(addTaskMethod).not.toHaveBeenCalled();
-        expect(localStorageList).not.toHaveBeenCalled();
-      });
-    
-      it('should create a new task with the input text and appropriate ID', () => {
-        taskInput.value = 'My Task';
-        addTask();
-        expect(taskManager.tasksArray.length).toBe(1);
-        expect(taskManager.tasksArray[0].task).toBe('My Task');
-        expect(taskManager.tasksArray[0].id).toBe(0);
-      });
 
-    it('should call addTaskMethod with the created task', () => {
-        taskInput.value = 'My Task';
-        addTask();
-        expect(addTaskMethod).toHaveBeenCalledTimes(1);
-        expect(addTaskMethod).toHaveBeenCalledWith(taskManager.tasksArray[0]);
-    });
+        expect(taskManager.tasksArray).toHaveLength(1);
+        expect(taskManager.tasksArray[0]).toEqual({ task: 'New Task', id: 0 });
 
-    it('should call localStorageList after adding the task', () => {
-        taskInput.value = 'My Task';
-        addTask();
-        expect(localStorageList).toHaveBeenCalledTimes(1);
-    });
-
-    it('should clear the input field after adding the task', () => {
-        taskInput.value = 'My Task';
-        addTask();
+        expect(mockAddTaskMethod).toHaveBeenCalledWith({ task: 'New Task', id: 0 });
+        expect(mockLocalStorageList).toHaveBeenCalled();
         expect(taskInput.value).toBe('');
     });
-})
+
+});

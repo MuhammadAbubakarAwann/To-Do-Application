@@ -1,26 +1,12 @@
-import removeTaskButton from '../buttons/removeButton'
-import updateTaskButton from '../buttons/updateButton'
-
-import removeTaskCallBack from '../CallBacks/removeTask'
-import updateTaskCallBack from '../CallBacks/updateTask'
+import addNewRow from '../NewRow/addNewRow';
 
 function addTask(task) {
 
-    const taskList = document.getElementById('taskList')
-    const taskItem = document.createElement('li')
-
-    taskItem.textContent = task.task
+    const taskList = document.getElementById('taskList').getElementsByTagName('tbody')[0];
+    const taskItem = addNewRow(task.id, task.task);
     taskItem.id = task.id
-
-    const removeButton = removeTaskButton()
-    taskItem.appendChild(removeButton)
-    removeButton.addEventListener('click', () => removeTaskCallBack(taskItem.id))
-
-    const updateButton = updateTaskButton()
-    taskItem.appendChild(updateButton)
-    updateButton.addEventListener('click', () => updateTaskCallBack(taskItem.id, taskItem))
-
-    taskList.appendChild(taskItem)
+    
+    taskList.appendChild(taskItem);
 
 }
 export default addTask

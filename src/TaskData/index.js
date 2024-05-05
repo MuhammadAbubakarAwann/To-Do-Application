@@ -14,7 +14,7 @@ class TaskManager {
 
         taskListReloader()
     }
-
+    
 }
 const taskManager = new TaskManager
 export default taskManager

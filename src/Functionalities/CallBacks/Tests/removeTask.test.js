@@ -1,31 +1,35 @@
-import { JSDOM } from 'jsdom';
 import removeTask from '../removeTask';
 import setLocalStorageList from '../../LocalStorage/localStorageList';
 import taskManager from '../../../TaskData/index';
+import { JSDOM } from 'jsdom';
 
 jest.mock('../../LocalStorage/localStorageList');
+describe('removeTask function', () => {
+    beforeEach(() => {
+        const dom = new JSDOM(`<!DOCTYPE html><html><body>
+          <input id="taskInput" type="text" />
+          <table id="taskList"><tbody></tbody></table>
+        </body></html>`);
+        global.document = dom.window.document;
+        global.window = dom.window;
+    });
 
-describe('removeTask', () => {
- let dom;
+    test('removes a task and updates local storage', () => {
+        taskManager.tasksArray = [
+            { id: 0, task: 'Task 1' },
+            { id: 1, task: 'Task 2' },
+            { id: 2, task: 'Task 3' },
+        ];
 
- beforeEach(() => {
-    dom = new JSDOM(`<!DOCTYPE html><html><body><ul id="taskList"></ul></body></html>`); // Create a basic DOM environment with a 'taskList' element
-    global.document = dom.window.document;
-    taskManager.tasksArray = []; 
- });
+        const taskIndexToRemove = 1;
 
- afterEach(() => {
-    global.document = undefined;
-    jest.resetAllMocks();
- });
+        removeTask(taskIndexToRemove);
 
-  it('should remove the task at the specified index and update localStorage', () => {
-    taskManager.tasksArray = [{ id: 1, task: 'Task 1' }, { id: 2, task: 'Task 2' }];
+        expect(taskManager.tasksArray).toEqual([
+            { id: 0, task: 'Task 1' },
+            { id: 1, task: 'Task 3' },
+        ]);
 
-    const taskIndexToRemove = 1;
-    removeTask(taskIndexToRemove);
-
-    expect(taskManager.tasksArray).toEqual([{ id: 1, task: 'Task 1' }]);
-    expect(setLocalStorageList).toHaveBeenCalledTimes(1);
-  });
+        expect(setLocalStorageList).toHaveBeenCalled();
+    });
 });

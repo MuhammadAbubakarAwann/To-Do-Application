@@ -9,12 +9,12 @@ function addTask() {
     const tasksArray = taskManager.tasksArray
     if (taskText === '') return;
 
-    const task = {
+    const task = {  
         task: taskText,
         id: tasksArray.length
     };
     tasksArray.push(task);
-    ``
+    
     addTaskMethod(task);
     localStorageList();
 

@@ -1,42 +1,49 @@
-import { JSDOM } from 'jsdom';
-import updateTaskCallBack from '../updateTask';
+import updateTask from '../updateTask';
 import taskManager from '../../../TaskData/index';
 import setLocalStorageList from '../../LocalStorage/localStorageList';
-import { updateTask } from '../../Taskmethods/updateTask';
+import taskListReloader from '../../listReloader/reloader';
 
+jest.mock('../../../TaskData/index');
 jest.mock('../../LocalStorage/localStorageList');
-jest.mock('../../Taskmethods/updateTask');
+jest.mock('../../listReloader/reloader');
 
 describe('updateTask', () => {
-    let dom;
-
+    
+    const tasksArray = [{ task: 'Original Task 1' }, { task: 'Original Task 2' }];
+    const updatedTask = 'Modified Task';
+    const indexToUpdate = 0;
     beforeEach(() => {
-        dom = new JSDOM(`
-      <button id="update-button">Update Task</button>
-      <div id="task-item-1"><input id="updateTaskInputField" /></div>
-    `);
-        global.document = dom.window.document;
-        taskManager.tasksArray = [{ id: 1, task: 'Initial Task' }];
+        
+        taskManager.tasksArray = tasksArray; 
     });
 
     afterEach(() => {
-        global.document = undefined;
         jest.resetAllMocks();
     });
 
-    it('should update tasksArray and call other functions on input change', () => {
-        const taskItem = document.querySelector('#task-item-1');
-        const updateButton = document.getElementById('update-button');
-        const updateTaskMethod = jest.fn(updateTask);
-        updateButton.addEventListener('click', () => {
-            updateTaskCallBack(0, taskItem);
-        });
+    beforeEach(() => {
+    });
 
-        updateButton.click();
+    it('should update the task at the specified index', () => {
+        updateTask(indexToUpdate, updatedTask);
 
+        expect(taskManager.tasksArray[indexToUpdate].task).toBe(updatedTask);
+    });
 
-        expect(updateTaskMethod.updateTask).toHaveBeenCalled();
-        expect(setLocalStorageList).toHaveBeenCalled();
-        expect(taskManager.tasksArray).toEqual([{ id: 1, task: 'Updated Task' }]);
+    it('should call taskListReloader', () => {
+        updateTask(indexToUpdate, updatedTask);
+
+        expect(taskListReloader).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call setLocalStorageList', () => {
+        updateTask(indexToUpdate, updatedTask);
+
+        expect(setLocalStorageList).toHaveBeenCalledTimes(1);
+    });
+
+    it('should handle invalid index gracefully', () => {
+        const invalidIndex = 10;
+        expect(() => updateTask(invalidIndex, updatedTask)).toThrow();
     });
 });

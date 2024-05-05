@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1703863278206" clover="3.2.0">
+  <project timestamp="1703863278206" name="All files">
+    <metrics statements="112" coveredstatements="93" conditionals="8" coveredconditionals="3" methods="18" coveredmethods="12" elements="138" coveredelements="108" complexity="0" loc="112" ncloc="112" packages="7" files="13" classes="13"/>
+    <package name="Functionalities.CallBacks">
+      <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+      <file name="addTask.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\CallBacks\addTask.js">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="deleteList.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\CallBacks\deleteList.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="removeTask.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\CallBacks\removeTask.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="updateTask.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\CallBacks\updateTask.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="Functionalities.LocalStorage">
+      <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="gettaskFromlocalStorage.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\LocalStorage\gettaskFromlocalStorage.js">
+        <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="localStorageList.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\LocalStorage\localStorageList.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="Functionalities.NewRow">
+      <metrics statements="33" coveredstatements="26" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="addNewRow.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\NewRow\addNewRow.js">
+        <metrics statements="33" coveredstatements="26" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="Functionalities.Taskmethods">
+      <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="deleteList.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\Taskmethods\deleteList.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="updateTask.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\Taskmethods\updateTask.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="Functionalities.buttons">
+      <metrics statements="34" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="removeButton.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\buttons\removeButton.js">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+      <file name="updateButton.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\buttons\updateButton.js">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="Functionalities.listReloader">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="reloader.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\Functionalities\listReloader\reloader.js">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="TaskData">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="index.js" path="C:\Users\Abubakar Awan\Desktop\Re-TO-DO\src\TaskData\index.js">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
